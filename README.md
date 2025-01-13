@@ -8,3 +8,12 @@
 - Размерность: n_rounds : int=5
 
 **Мониторинг**: prometheus + grafana
+
+-----
+# Проверка работы сервиса
+
+```docker compose up``` - сборка образа и запуск контейнера с сервисом.
+
+- localhost:8000 - адрес с сервисом model_api.py;
+- localhost:9090 - адрес с prometheus, подключенной к сервису;
+- localhost:3000 - адрес с grafana, подключенной к prometheus;
