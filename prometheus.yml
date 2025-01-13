@@ -1,0 +1,6 @@
+global:
+  scrape_interval: 20s
+scrape_configs:
+  - job_name: 'web'
+    static_configs:
+      - targets: ['docker.for.mac.localhost:8000']
