@@ -1,0 +1,25 @@
+version: '1'
+
+services:
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+
+  ml-model:
+    container_name: ml-model
+    build: .
+    ports:
+      - 8000:8000
